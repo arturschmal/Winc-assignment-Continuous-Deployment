@@ -18,7 +18,7 @@ jobs:
       - name: Run tests
         run: pytest
 
-    deploy:
+  deploy:
     needs: run-tests
     runs-on: ubuntu-20.04
     steps:
@@ -32,4 +32,4 @@ jobs:
           script: |
             cd /home/winc-cd
             git pull
-            # systemctl restart cd_assignment
+            
