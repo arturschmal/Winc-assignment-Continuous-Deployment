@@ -18,4 +18,4 @@ def test_index(client):
 def test_cow(client):
     response = client.get("/cow")
     assert response.status_code == 200
-    assert response.data == b'MOoooOo!'
+    assert response.data == b'MOoooOoO!'
