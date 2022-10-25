@@ -1,16 +1,14 @@
 name: Test and Deploy
 
-# Run this workflow whenever something new is pushed.
 on: push
 jobs:
-  run-tests:
+  run-test:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Setup Python
         uses: actions/setup-python@v2
-        # Specify some input for this particular action
         with:
           python-version: '3.8.6'
       - name: Install Dependencies
@@ -19,7 +17,7 @@ jobs:
         run: pytest
 
   deploy:
-    needs: run-tests
+    needs: run-test
     runs-on: ubuntu-20.04
     steps:
       - name: SSH Remote Commands
@@ -30,6 +28,6 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            cd /home/winc-cd
-            git pull
+            mkdir /home/test
+            touch /home/test/foo.txt
             
