@@ -29,6 +29,6 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             cd /home
-            mkdir /home/test
-            touch /home/test/fooooo.txt
+            git clone git@github.com:arturschmal/winc-cd.git
+            echo 'Repository cloned to /home'
             
