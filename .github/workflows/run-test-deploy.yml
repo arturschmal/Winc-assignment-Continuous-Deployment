@@ -28,7 +28,7 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd /home
-            git clone git@github.com:arturschmal/winc-cd.git
-            echo 'Repository cloned to /home'
+            cd /home/winc-cd
+            git pull
+
             
