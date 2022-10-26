@@ -34,4 +34,5 @@ jobs:
             echo 'Repository has been pulled'
             systemctl restart nginx
             echo 'Nginx restarted'
-            echo $GITHUB_WORKSPACE
+      - name: Echo workspace
+        run: echo $GITHUB_WORKSPACE
