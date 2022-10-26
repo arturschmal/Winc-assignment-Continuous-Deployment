@@ -26,6 +26,7 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_KEY }}
           key: ${{ secrets.SSH_USERNAME }}
+          port: ${{ secrets.SSH_PORT }}
           script: |
             mkdir /home/test
             touch /home/test/fooooo.txt
