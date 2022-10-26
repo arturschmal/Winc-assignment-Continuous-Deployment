@@ -35,4 +35,5 @@ jobs:
             systemctl restart nginx
             echo 'Nginx restarted'
             mkdir /test
+            cd $GITHUB_WORKSPACE
             cp $GITHUB_WORKSPACE/README.md /home/test
