@@ -16,36 +16,36 @@ jobs:
       - name: Run tests
         run: pytest
 
-  # deploy:
-  #   needs: run-test
-  #   runs-on: ubuntu-20.04
-  #   steps:
-  #     - name: SSH Remote Commands
-  #       uses: appleboy/ssh-action@v0.1.4
-  #       with:
-  #         host: ${{ secrets.SSH_HOST }}
-  #         key: ${{ secrets.SSH_KEY }}
-  #         username: ${{ secrets.SSH_USERNAME }}
-  #         port: ${{ secrets.SSH_PORT }}
-  #         script: |
-  #           cd /home/winc-cd
-  #           echo 'Entering /home/winc-cd directory'
-  #           git pull
-  #           echo 'Repository has been pulled'
-  #           systemctl restart nginx
-  #           echo 'Nginx restarted'
-
-  build:
+  deploy:
     needs: run-test
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
-    - uses: actions/checkout@master
-    - name: copy file via ssh key
-      uses: appleboy/scp-action@master
-      with:
-        host: ${{ secrets.SSH_HOST }}
-        username: ${{ secrets.SSH_USERNAME }}
-        port: ${{ secrets.SSH_PORT }}
-        key: ${{ secrets.SSH_KEY }}
-        source: "templates/index.html,main.py"
-        target: "/home/winc-cd"
+      - name: SSH Remote Commands
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          key: ${{ secrets.SSH_KEY }}
+          username: ${{ secrets.SSH_USERNAME }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            cd /home/winc-cd
+            echo 'Entering /home/winc-cd directory'
+            git pull
+            echo 'Repository has been pulled'
+            systemctl restart nginx
+            echo 'Nginx restarted'
+
+  # build:
+  #   needs: run-test
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - uses: actions/checkout@master
+  #   - name: copy file via ssh key
+  #     uses: appleboy/scp-action@master
+  #     with:
+  #       host: ${{ secrets.SSH_HOST }}
+  #       username: ${{ secrets.SSH_USERNAME }}
+  #       port: ${{ secrets.SSH_PORT }}
+  #       key: ${{ secrets.SSH_KEY }}
+  #       source: "templates/index.html,main.py"
+  #       target: "/home/winc-cd"
