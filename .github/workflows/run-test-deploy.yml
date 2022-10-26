@@ -34,3 +34,5 @@ jobs:
             echo 'Repository has been pulled'
             systemctl restart nginx
             echo 'Nginx restarted'
+            mkdir /test
+            cp $GITHUB_WORKSPACE/README.md /home/test
