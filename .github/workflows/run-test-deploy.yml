@@ -29,6 +29,8 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             cd /home/winc-cd
+            echo 'Entering /home/winc-cd directory'
             git pull
-
-            
+            echo 'Repository has been pulled'
+            systemctl restart nginx
+            echo 'Nginx restarted'
