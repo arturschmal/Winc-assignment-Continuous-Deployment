@@ -36,7 +36,6 @@ jobs:
   #           echo 'Nginx restarted'
 
   build:
-    name: Build
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
