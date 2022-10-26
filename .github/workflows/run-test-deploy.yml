@@ -46,5 +46,5 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         port: ${{ secrets.SSH_PORT }}
         key: ${{ secrets.SSH_KEY }}
-        source: "README.md"
+        source: "winc-cd/README.md"
         target: "test"
