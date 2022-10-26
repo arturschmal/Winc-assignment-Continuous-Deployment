@@ -28,5 +28,5 @@ jobs:
           key: ${{ secrets.SSH_USERNAME }}
           script: |
             mkdir /home/test
-            touch /home/test/foo.txt
+            touch /home/test/fooooo.txt
             
