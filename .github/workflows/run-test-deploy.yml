@@ -32,8 +32,8 @@ jobs:
             echo 'Entering /home/winc-cd directory'
             git pull
             echo 'Repository has been pulled'
-            systemctl restart nginx
-            echo 'Nginx restarted'
+            systemctl restart winc-cd
+            echo 'winc-cd restarted'
 
   # build:
   #   needs: run-test
