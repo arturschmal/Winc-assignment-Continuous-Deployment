@@ -6,7 +6,7 @@ Although not much Python coding was involved this turned out to be an assignment
 
 During this module we were introduced to quite a few new concepts and software and it took me a while to grasp how the various components related to each other. I was wondering things like why Nginx was needed while there was already a VPS and Ubuntu? And what is Gunicorn for? I asked for a bit of elaborating on this on the Slack channel and mentor Jip pointed me to an article that made things a bit clearer for me. After that I was able to make a visualization that reflects how I understand the components and their relation.
 
-<img src="/static/cd_pipeline.jpeg" width="200"/>
+<img src="/static/cd_pipeline.jpeg" width="600"/>
 ![cd_pipeline.jpeg](/static/cd_pipeline.jpeg)
 
 At the bottom of the process there is me, making a Flask app and pushing that to the remote Github repository. When I push to this repo there’s a Github Actions `yaml` file activated that runs a `pytest` on my app and if it passes the test, it logs into a remote server and pulls the flask app to that server. 
