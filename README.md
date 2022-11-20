@@ -1,6 +1,6 @@
 [![Test and Deploy](https://github.com/arturschmal/winc-cd/actions/workflows/run-test-deploy.yml/badge.svg)](https://github.com/arturschmal/winc-cd/actions/workflows/run-test-deploy.yml)
 
-# Winc CD assignment report
+# Winc Continuous Deployment assignment report
 
 Although not much Python coding was involved this turned out to be an assignment not that easy. At first it felt like we were just required to follow tutorial-like steps, but eventually there were enough pitfalls and challenges along the way that required an effort in thinking and researching.
 
